@@ -13,4 +13,4 @@ A branch is a copy of the project you are working on. It allows you to experimen
 A commit creates a save point in the project you work on. A good commit message is meaningful and contextual.
 
 * What is a merge conflict?
-A merge conflict occurs when have commits in your current branch which are not in the other branch, and vice versa. Merge conflicts can happen when you merge or pull from a branch.
+A merge conflict occurs when have commits in your current branch which are not in the other branch, and vice versa. A merge conflict can happen when you merge or pull from a branch.
