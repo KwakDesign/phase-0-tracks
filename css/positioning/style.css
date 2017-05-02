@@ -1,0 +1,23 @@
+#container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 100px auto;
+}
+
+#hat {
+  position: absolute;
+  left: 120px;
+  top: -60px;
+}
+
+#glasses {
+  position: absolute;
+  left: 185px;
+  top: 100px;
+}
+
+#octopus {
+  display: block;
+  margin: 200px auto;
+}
