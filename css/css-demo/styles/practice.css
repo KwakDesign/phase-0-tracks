@@ -1,0 +1,28 @@
+#contact-info p {
+  font-size: 0.8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin: 2px;
+}
+
+.unordered {
+  font-size: 0.8em;
+}
+
+li:nth-child(odd) {
+  background-color: yellow;
+  border-radius: 5px;
+}
+
+section ul.unordered li:nth-child(even) {
+  background-color: orange;
+}
