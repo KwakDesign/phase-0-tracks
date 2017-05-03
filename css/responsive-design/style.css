@@ -1,5 +1,5 @@
 blockquote {
-  border-left: 5px solid blue;
+  border-left: 5px solid gold;
   padding: 15px;
   margin-left: 0px;
 }
@@ -15,7 +15,7 @@ cite {
 }
 
 /* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
+image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 img {
   width: 100%;
@@ -30,3 +30,97 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+body {
+  margin: 0 auto;
+  max-width: 960px;
+  background-color: LightGoldenRodYellow;
+}
+
+#external-links {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main {
+  width: 78%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: lightblue;
+  font-weight: bold;
+}
+
+a:hover {
+  color: green;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+h1, p, blockquote, cite, figcaption, ol, a {
+  font-family: Helvetica;
+}
+
+@media screen and (min-width: 375px) and (max-width: 480px) {
+
+  #external-links, main h1, main p, figcaption {
+    padding: 0 10px;
+  }
+
+  #external-links h1 {
+    font-size: 1em;
+  }
+
+  #external-links ul li {
+    padding-bottom: 20px;
+  }
+
+  main h1 {
+    font-size: 1.4em;
+  }
+
+  #external-links, main {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+  #external-links {
+    padding-left: 10px;
+  }
+
+  #external-links h1 {
+    font-size: 1.2em;
+  }
+
+  #external-links ul li a {
+    font-size: 0.9em;
+  }
+
+  main {
+    width: 77%;
+  }
+
+  main h1 {
+    font-size: 1.5em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
