@@ -41,13 +41,13 @@ body {
   background-color: LightGoldenRodYellow;
 }
 
-#external-links {
+.top-section {
   width: 20%;
   display: inline-block;
   vertical-align: top;
 }
 
-main {
+.mid-section {
   width: 78%;
   display: inline-block;
   vertical-align: top;
@@ -73,8 +73,16 @@ h1, p, blockquote, cite, figcaption, ol, a {
 
 @media screen and (min-width: 375px) and (max-width: 480px) {
 
-  #external-links, main h1, main p, figcaption {
+  .mid-section h1, .mid-section p {
     padding: 0 10px;
+  }
+
+  #external-links {
+    padding-left: 10px;
+  }
+
+  .mid-section figcaption {
+    padding-right: 10px;
   }
 
   #external-links h1 {
@@ -89,8 +97,7 @@ h1, p, blockquote, cite, figcaption, ol, a {
     font-size: 1.4em;
   }
 
-  #external-links, main {
-    display: block;
+  .top-section, .mid-section {
     width: 100%;
   }
 
