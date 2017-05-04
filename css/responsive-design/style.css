@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 blockquote {
   border-left: 5px solid gold;
   padding: 15px;
