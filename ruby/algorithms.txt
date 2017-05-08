@@ -1,0 +1,36 @@
+# Robot Elevator Algorithm
+-Move towards elevator button panel.
+-Press the button on the panel to call the elevator.
+-Wait for the elevator to arrive and it's to door open which will make a 'ding' sound indicating it has opened.
+-Enter the elevator.
+-Locate the elevator floor button panel.
+-Inform the robot which floor button to press.
+  -Locate the floor button which was requested.
+  -Press the correct floor button.
+  -Press the 'close door' button to close the elevator door.
+-Wait for the elevator to reach the floor.
+-Wait for the door to open and the 'ding' sound to occur indicating the floor has been reached and the elevator door has opened.
+-Exit the elevator.
+
+# Cooking Breakfast Omelet Algorithm
+-Walk into the kitchen.
+-Open the refrigerator door.
+  -Take out items to make omelet.
+    -3 eggs.
+    -3 strips of veggie bacon.
+    -some mushrooms.
+    -2 slices of cheese.
+-Break eggs into a bowl and whisk.
+-Chop veggie bacon and mushrooms on cutting board.
+-Place chopped veggie bacon and mushrooms into frying pan.
+-Turn on burner.
+-Stir items in the frying pan.
+-Pour in whisked eggs.
+-Wait for eggs to cook on one side.
+-Flip over the omelet.
+-Wait for eggs to cook on the other side.
+-Place the 2 slices of cheese on the omelet.
+-Flip over half the omelet to cover up the cheese.
+-Wait for cheese to melt.
+-Turn off the burner.
+-Place omelet onto a plate.
