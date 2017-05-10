@@ -1,16 +1,30 @@
-# What is your name? Some known vampires are in the area, and we can check against the Werewolf Intelligence Bureau database for their aliases.
-# How old are you? What year were you born? This is to try to trick the vampire, who is likely several hundreds of years old. If an employee gives an age and a year of birth that don’t line up mathematically, that employee might be a vampire.
-# Our company cafeteria serves garlic bread. Should we order some for you? Vampires hate garlic. Do not even get a vampire started on garlic. Invite a vampire to an Italian restaurant even one time, and you’ll never hear the end of it.
-# Would you like to enroll in the company’s health insurance? Vampires are immortal, so they certainly don’t need health insurance.
 
-puts "What's your name?"
-employee_name = gets.chomp
-puts "How old are you?"
-employee_age = gets.chomp.to_i
-puts "What year were you born?"
-employee_birth_year = gets.chomp.to_i
-puts "Our cafeteria serves garlic bread. Is that a problem for you?"
-employee_garlic_bread = gets.chomp
-puts "Would you like to enroll in the company's health insurance?"
-employee_health = gets.chomp
+puts "Please enter the numbe of employees being proccessed."
+num_of_employees = gets.chomp.to_i
 
+until num_of_employees == 0
+  puts "What's your name?"
+  employee_name = gets.chomp
+  puts "How old are you?"
+  employee_age = gets.chomp.to_i
+  puts "What year were you born?"
+  employee_birth_year = gets.chomp.to_i
+  puts "Do you eat garlic bread? (y/n)"
+  employee_garlic_bread = gets.chomp
+  puts "Would you like to enroll in the company's health insurance? (y/n)"
+  employee_health = gets.chomp
+  employee_real_age = Time.new.year - employee_birth_year
+
+  if employee_name == 'Drake Cula' || employee_name == "Tu Fang"
+    puts "“Definitely a vampire."
+  elsif employee_age == employee_real_age && (employee_garlic_bread == "y" || employee_health == "y")
+    puts "Probably not a vampire."
+  elsif employee_age != employee_real_age && employee_garlic_bread == "n" && employee_health == "n"
+    puts "Almost certainly a vampire."
+  elsif employee_age != employee_real_age && (employee_garlic_bread == "n" || employee_health == "n")
+    puts "Probably a vampire."
+  else
+    puts "“Results inconclusive."
+  end
+  num_of_employees -= 1
+end
