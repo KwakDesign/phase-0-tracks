@@ -32,13 +32,13 @@ until num_of_employees == 0
     puts "Probably a vampire."
   elsif employee_age == employee_real_age && (employee_garlic_bread == "y" || employee_health == "y")
     puts "Probably not a vampire."
-  elsif employee_age != employee_real_age && employee_garlic_bread == "n" && employee_health == "n"
+  elsif (employee_age >= employee_real_age || employee_age <= employee_real_age) && employee_garlic_bread == "n" && employee_health == "n"
     puts "Almost certainly a vampire."
-  elsif employee_age != employee_real_age && (employee_garlic_bread == "n" || employee_health == "n")
+  elsif (employee_age >= employee_real_age || employee_age <= employee_real_age) && (employee_garlic_bread == "n" || employee_health == "n")
     puts "Probably a vampire."
   else
     puts "“Results inconclusive."
   end
   num_of_employees -= 1
 end
-prints "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
