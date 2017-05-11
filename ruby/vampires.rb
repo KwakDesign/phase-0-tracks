@@ -14,9 +14,22 @@ until num_of_employees == 0
   puts "Would you like to enroll in the company's health insurance? (y/n)"
   employee_health = gets.chomp
   employee_real_age = Time.new.year - employee_birth_year
+  puts "Please name any allergies you have. When finished type 'done'."
+  allergies = gets.chomp
+
+  while allergies != "done"
+    if allergies != "sunshine"
+      puts "What other allergies do you have?"
+      allergies = gets.chomp
+    else
+      break if allergies == "sunshine"
+    end
+  end
 
   if employee_name == 'Drake Cula' || employee_name == "Tu Fang"
     puts "“Definitely a vampire."
+  elsif allergies == "sunshine"
+    puts "Probably a vampire."
   elsif employee_age == employee_real_age && (employee_garlic_bread == "y" || employee_health == "y")
     puts "Probably not a vampire."
   elsif employee_age != employee_real_age && employee_garlic_bread == "n" && employee_health == "n"
