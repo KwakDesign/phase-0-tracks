@@ -54,21 +54,18 @@ end
 # Then it will present the users request.
 
 puts "Would you like to encrypt or decrypt your password? Please enter 'encrypt' or 'decrypt'."
-pass_type = gets.chomp.downcase!
+pass_type = gets.chomp.downcase
 
 until pass_type == "encrypt" || pass_type == "decrypt"
   puts "Please enter 'encrypt' or 'decrypt'."
-  pass_type = gets.chomp.downcase!
+  pass_type = gets.chomp.downcase
 end
 
 puts "Please enter your password."
-p_word = gets.chomp.downcase!
+p_word = gets.chomp.downcase
 
 if pass_type == "encrypt"
   encrypt(p_word)
 else
   decrypt(p_word)
 end
-
-
-
