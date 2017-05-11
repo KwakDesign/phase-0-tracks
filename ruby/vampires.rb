@@ -1,5 +1,5 @@
 
-puts "Please enter the numbe of employees being proccessed."
+puts "Please enter the number of employees being proccessed."
 num_of_employees = gets.chomp.to_i
 
 until num_of_employees == 0
@@ -41,3 +41,4 @@ until num_of_employees == 0
   end
   num_of_employees -= 1
 end
+prints "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
