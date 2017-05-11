@@ -40,5 +40,10 @@ def decrypt(pass)
   p pass
 end
 
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
 
+decrypt(encrypt("swordfish"))
 
