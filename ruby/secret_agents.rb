@@ -40,10 +40,35 @@ def decrypt(pass)
   p pass
 end
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+# encrypt("abc")
+# encrypt("zed")
+# decrypt("bcd")
+# decrypt("afe")
 
-decrypt(encrypt("swordfish"))
+# decrypt(encrypt("swordfish"))
+
+# Ask user if they would like to encrypt or decrypt their password.
+# Create a loop to make sure the user enters the correct inputs.
+# Ask user to enter in the password they would like to use.
+# Once the user enters in their password the requested methods will be executed.
+# Then it will present the users request.
+
+puts "Would you like to encrypt or decrypt your password? Please enter 'encrypt' or 'decrypt'."
+pass_type = gets.chomp.downcase!
+
+until pass_type == "encrypt" || pass_type == "decrypt"
+  puts "Please enter 'encrypt' or 'decrypt'."
+  pass_type = gets.chomp.downcase!
+end
+
+puts "Please enter your password."
+p_word = gets.chomp.downcase!
+
+if pass_type == "encrypt"
+  encrypt(p_word)
+else
+  decrypt(p_word)
+end
+
+
 
