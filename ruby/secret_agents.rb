@@ -17,7 +17,7 @@ def encrypt(pass)
     end
     index += 1
   end
-  p pass
+  pass
 end
 
 # Decrypt Pseudo Code
@@ -37,15 +37,15 @@ def decrypt(pass)
     pass[index] = string[string.index(pass[index]) - 1]
     index += 1
   end
-  p pass
+  pass
 end
 
-# encrypt("abc")
-# encrypt("zed")
-# decrypt("bcd")
-# decrypt("afe")
+# p encrypt("abc")
+# p encrypt("zed")
+# p decrypt("bcd")
+# p decrypt("afe")
 
-# decrypt(encrypt("swordfish"))
+# p decrypt(encrypt("swordfish"))
 
 # Ask user if they would like to encrypt or decrypt their password.
 # Create a loop to make sure the user enters the correct inputs.
@@ -65,7 +65,7 @@ puts "Please enter your password."
 p_word = gets.chomp.downcase
 
 if pass_type == "encrypt"
-  encrypt(p_word)
+  p encrypt(p_word)
 else
-  decrypt(p_word)
+  p decrypt(p_word)
 end
