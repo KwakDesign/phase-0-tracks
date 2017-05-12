@@ -57,7 +57,7 @@ puts "Would you like to encrypt or decrypt your password? Please enter 'encrypt'
 pass_type = gets.chomp.downcase
 
 until pass_type == "encrypt" || pass_type == "decrypt"
-  puts "Please enter 'encrypt' or 'decrypt'."
+  puts "Invalid input. Please enter 'encrypt' or 'decrypt'."
   pass_type = gets.chomp.downcase
 end
 
