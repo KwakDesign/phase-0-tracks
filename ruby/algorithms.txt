@@ -1,4 +1,5 @@
 # Robot Elevator Algorithm
+
 -Move towards elevator button panel.
 -Press the button on the panel to call the elevator.
 -Wait for the elevator to arrive and it's to door open which will make a 'ding' sound indicating it has opened.
@@ -13,6 +14,7 @@
 -Exit the elevator.
 
 # Cooking Breakfast Omelet Algorithm
+
 -Walk into the kitchen.
 -Open the refrigerator door.
   -Take out items to make omelet.
