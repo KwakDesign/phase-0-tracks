@@ -1,18 +1,14 @@
 # Encrypt Pseudo Code
-# define a method called encrypt.
-# create a variable called index and assign it a value of 0.
-# create a while loop where it will go through each index position in the password and advance the character.
-# put in an if clause which removes an added letter when the letter 'z' is used.
-# add one to index to go to the next letter in the index position.
-# return the input.
+# Define a method called encrypt, that takes the user's password input and runs a loop on it which will go through each letter in the password and go to the letter character after it based on it's position on the alphabet sequence and then return the updated encrypted password.
+# If the user happen to enter the letter 'z' the 'next' method which is used to advance the letter to the next character in the alphabet returns another an extra letter, so the 'chop' method in a conditional statement to account for this scenario to remove it.
 
 def encrypt(password)
   index = 0
   while index < password.length
     if password[index] == "z"
-      password[index] = password[index].next!.chop
+      password[index] = password[index].next.chop
     else
-      password[index] = password[index].next!
+      password[index] = password[index].next
     end
     index += 1
   end
@@ -20,14 +16,7 @@ def encrypt(password)
 end
 
 # Decrypt Pseudo Code
-# define a method called decrypt.
-# create a variable called string which encases the alphabet.
-# create a variable called index and assign it a value of 0.
-# then create a while loop with a conditional statement index is less than the length of the input
-# use the index method on a letter in our password and take the index and apply it to the string
-# reduce the index by 1 for each character and take the result and apply it to password.
-# add one to index to go to the next letter
-# print the input
+# Define a method called decrypt, that takes the user's password input and runs a loop on it which will go through each letter in the password and go to the letter character before it based on it's position on the alphabet sequence and then return the updated decrypted password.
 
 def decrypt(password)
   alpha = "abcdefghijklmnopqrstuvwxyz"
@@ -46,11 +35,12 @@ end
 
 # p decrypt(encrypt("swordfish"))
 
+# Interface Pseudo Code
 # Ask user if they would like to encrypt or decrypt their password.
-# Create a loop to make sure the user enters the correct inputs.
+# Create a loop to make sure the user enters the correct input.
 # Ask user to enter in the password they would like to use.
-# Once the user enters in their password the requested methods will be executed.
-# Then it will present the users request.
+# Once the user enters their password the requested method will be executed.
+# Then it will present the users updated password.
 
 puts "Would you like to encrypt or decrypt your password? Please enter 'encrypt' or 'decrypt'."
 pass_type = gets.chomp.downcase
