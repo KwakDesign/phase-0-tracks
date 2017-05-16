@@ -61,11 +61,11 @@ elsif client_update == :client_children
   client_info[:client_children] = gets.chomp.to_i
   p client_info
 elsif client_update == :client_decor
-  puts "Please enter the decor theme your client desires."
+  puts "Please enter the decor themes your client desires."
   client_info[:client_decor] = gets.chomp
   p client_info
 elsif client_update == :client_color
-  puts "Please enter your client's favorite color."
+  puts "Please enter your client's favorite colors."
   client_info[:client_color] = gets.chomp
   p client_info
 elsif client_update == :client_budget
