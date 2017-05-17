@@ -1,0 +1,1 @@
+# Alias Manager Application Pseudo Code
