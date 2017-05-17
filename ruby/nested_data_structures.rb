@@ -1,6 +1,6 @@
 attack_bot = {
   head: {
-    brain: {
+    main_brain: {
       left_brain: 'super logic chip',
       right_brain: 'super creative chip'
     },
@@ -40,3 +40,13 @@ attack_bot = {
   },
   skin: 'platinum'
 }
+
+attack_bot[:head][:main_brain][:left_brain]
+attack_bot[:head][:main_brain][:right_brain] = 'ultra creative chip'
+attack_bot[:head][:mouth][0]
+attack_bot[:body][:stomach][:large_intestine]
+attack_bot[:left_arm][:hand][:fingers].unshift('sixth finger')
+attack_bot[:right_arm][:shoulder] = 'machine gun'
+attack_bot[:left_leg][:knee]
+attack_bot[:right_leg][:foot][0] = 'metal big toe'
+attack_bot[:skin] = 'gold'
