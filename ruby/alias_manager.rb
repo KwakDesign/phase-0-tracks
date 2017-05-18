@@ -28,16 +28,19 @@ end
 
 # User Interface Pseudo Code
 # Collect user's full name.
-# Run the alias modifier code passing in the full name as it's parameter.
+# Run the alias modifier code passing in the user entered full name as it's parameter.
 # Swap the full name so that the first name becomes the last name and the last name becomes the first name.
+# Create a sentence with full name and modified name and store the sentence.
 # Continue to run the alias modifier until the user enters 'quit'.
+# Print the stored sentences.
 
 full_name = ''
+stored_sentence = []
 until full_name == 'q'
   puts "Please enter your full name so you can be given an alias.(enter 'q' to quit)"
   full_name = gets.chomp
   break if full_name == 'q'
-  p alias_modifier(full_name).split(' ').reverse.join(' ')
+  alias_modifier(full_name).split(' ').reverse.join(' ')
+  stored_sentence.push("#{full_name} is also known as #{alias_modifier(full_name)}.")
 end
-
-
+puts stored_sentence
