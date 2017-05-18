@@ -23,3 +23,30 @@ def fib(num)
   p fib_arr.last
 end
 fib(100)
+
+# Release 2: Sort An Array
+# Sort Array Pseudo Code
+# Create an array of integers.
+# Define a method that takes one array parameter.
+  # Create an empty array.
+  # The method takes the first element of the array and inserts it into the empty array.
+  # Take the next element in the old array and compare it to the element in the new array.
+    # IF the element from the old array is less than the element of the new array.
+      # Insert the old element to the first position in the new array.
+    # ELSE
+      # Insert the old element to the last position in the new array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
