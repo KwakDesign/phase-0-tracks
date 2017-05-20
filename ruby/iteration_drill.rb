@@ -52,7 +52,16 @@ p find_item("boots", zombie_apocalypse_supplies)
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
-
+def only_five(arr)
+  index = 0
+  new_arr = []
+  until index == 5
+    new_arr << arr[index]
+    index += 1
+  end
+  new_arr
+end
+puts only_five(zombie_apocalypse_supplies)
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies

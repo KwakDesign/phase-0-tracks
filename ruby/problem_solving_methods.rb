@@ -46,11 +46,11 @@ def insertion_sort(arr)
     index = 0
     while index < sort_arr.length
       if i <= sort_arr[index]
-          sort_arr.insert(index, i)
-          break
+        sort_arr.insert(index, i)
+        break
       elsif index == sort_arr.length - 1
-          sort_arr.insert(index + 1, i)
-          break
+        sort_arr.insert(index + 1, i)
+        break
       end
       index += 1
     end
