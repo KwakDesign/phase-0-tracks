@@ -70,7 +70,8 @@ puts only_five(zombie_apocalypse_supplies)
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
-# ----
+combined_supplies = other_survivor_supplies + zombie_apocalypse_supplies
+combined_supplies.uniq
 
 # Hash Drills
 
