@@ -1,25 +1,58 @@
 # Array Drills
 
-zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
-                              "shotgun", "compass", "CB radio", "batteries"]
+  zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
-# ----
+zombie_apocalypse_supplies.each do |supply|
+  if supply == 'batteries'
+    print supply + ""
+    # exclude the asterisk after 'batteries' which is the last item in the array.
+  else
+    print supply + " * "
+    # print items in the array separated by an asterisk, include space in between so it can be more readable.
+  end
+end
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
-# ----
+def alpha_bubble_sort(arr)
+  swapped = true
+  while swapped do
+    index = 0
+    swapped = false
+    while index < arr.length - 1
+      if arr[index] > arr[index + 1]
+        arr[index], arr[index + 1] = arr[index + 1], arr[index]
+        swapped = true
+      end
+     index += 1
+    end
+  end
+  return arr
+end
+puts alpha_bubble_sort(zombie_apocalypse_supplies)
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
-# ----
+def find_item(str, arr)
+  index = 0
+  while index < arr.length
+    if str == arr[index]
+      arr[index]
+      break
+    end
+    index += 1
+  end
+  arr[index]
+end
+p find_item("boots", zombie_apocalypse_supplies)
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
-# ----
+
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
