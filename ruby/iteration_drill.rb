@@ -1,6 +1,5 @@
 # Array Drills
-
-  zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
+zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
@@ -87,17 +86,36 @@ extinct_animals = {
 
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
-# ----
+extinct_animals.each do |animal, year|
+  if year.to_s == "1923"
+    print animal + "-" + year.to_s + ""
+    # exclude the asterisk after '1923' which is the value in the hash.
+  else
+    print animal + "-" + year.to_s + " * "
+  end
+end
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
-# ----
+def before_2000(hash)
+  updated_hash = {}
+  hash.each do |animal, year|
+    if year < 1999
+      updated_hash[animal] = year
+    end
+  end
+  updated_hash
+end
+puts before_2000(extinct_animals)
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
-# ----
+extinct_animals.each do |animal, year|
+  year - 3
+  puts animal + " " + (year - 3).to_s
+end
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -105,10 +123,21 @@ extinct_animals = {
 # "Dodo"
 # "Saiga Antelope"
 # Do not use any special built-in methods.
-# ----
+def might_be_extinct(hash, string)
+  is_It = "This animal is NOT extinct."
+  hash.each do |animal, year|
+    if string == animal
+      is_It = "This animal is extinct..."
+    end
+  end
+  is_It
+end
+puts might_be_extinct(extinct_animals, "Andean Cat")
+puts might_be_extinct(extinct_animals, "Dodo")
+puts might_be_extinct(extinct_animals, "Saiga Antelope")
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
-# ----
+p extinct_animals.assoc("Passenger Pigeon")
