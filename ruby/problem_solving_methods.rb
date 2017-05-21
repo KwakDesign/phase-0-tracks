@@ -26,18 +26,21 @@ p fib(100) # returns 218922995834555169026
   # Create a new array which will output the final sorted elements, immediately store the first element of the unsorted array.
   # Delete the first element of the unsorted array which was stored already in the final array.
   # Take the next element in the old array and compare it to the element in the new array.
-    # Create a FOR element IN array loop which loops through each element in the unsorted array.
-      # Create index position starting at 0.
-      # Create WHILE loop with a condition stating while index is less than the length of the sorted array run this loop.
-        # IF element from unsorted array is less than or equal to element of sorted array at index position.
-          # INSERT at position of index the element from the unsorted array into the sorted array.
-          # BREAK out once completed.
-        # ELSIF position of index is equal to the length of the sorted array minus one.
-          # INSERT at position of index plus one the element from the unsorted array into the sorted array.
-          # BREAK out once completed.
-        # END IF/ELSIF conditional statement.
-        # Add one to the index.
-      # END the WHILE loop.
+  # Create a FOR element IN array loop which loops through each element in the unsorted array.
+    # Create index position starting at 0.
+    # Create WHILE loop with a condition stating while index is less than the length of the sorted array run this loop.
+      # IF element from unsorted array is less than or equal to element of sorted array at index position.
+        # INSERT at position of index the element from the unsorted array into the sorted array.
+        # BREAK out once completed.
+      # ELSIF position of index is equal to the length of the sorted array minus one.
+        # INSERT at position of index plus one the element from the unsorted array into the sorted array.
+        # BREAK out once completed.
+      # END IF/ELSIF conditional statement.
+      # Add one to the index.
+    # END the WHILE loop.
+  # END the FOR loop
+  # return final sorted array.
+# END
 
 def insertion_sort(arr)
   sort_arr = [arr[0]]
@@ -59,16 +62,3 @@ def insertion_sort(arr)
 end
 unsorted_arr = [2, 6, 4, 5, 7, 4]
 puts insertion_sort(unsorted_arr)
-
-
-
-
-
-
-
-
-
-
-
-
-
