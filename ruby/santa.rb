@@ -51,12 +51,3 @@ santa_group.each do |santa|
   puts "I'm a #{santa.age} year old #{santa.gender} Santa and my ethnicity is #{santa.ethnicity}."
   puts santa.speak
 end
-
-# santa_genders.length.times do |i|
-#   santa_group << Santa.new(santa_genders.sample, santa_ethnicities.sample, random_age.rand(141))
-#   # santa_group.each_with_index do |santa, idx|
-#   #   puts santa.speak
-#   #   break
-#   # end
-#   puts santa_group
-# end
