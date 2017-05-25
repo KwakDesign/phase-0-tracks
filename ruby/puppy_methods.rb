@@ -65,13 +65,10 @@ while trooper_group.length < 50
   index += 1
 end
 
-puts trooper_group.length
-
-
-
-
-
-
+trooper_group.each do |trooper|
+  puts trooper.fire_blaster(3)
+  puts trooper.scream
+end
 
 
 
