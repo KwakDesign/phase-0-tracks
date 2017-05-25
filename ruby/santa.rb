@@ -23,6 +23,7 @@ class Santa
     @reindeer_ranking.insert(8, @reindeer_ranking.delete(reindeer_name))
   end
 
+  # getter methods
   def reindeer_ranking
     @reindeer_ranking
   end
@@ -31,12 +32,13 @@ class Santa
     @gender
   end
 
-  def gender=(update_gender)
-    @gender = update_gender
-  end
-
   def age
     @age
+  end
+
+  # setter methods
+  def gender=(update_gender)
+    @gender = update_gender
   end
 
   def ethnicity
@@ -44,6 +46,7 @@ class Santa
   end
 end
 
+# Release 1 work
 # santas = []
 # santas << Santa.new("agender", "black")
 # santas << Santa.new("female", "Latino")
@@ -65,6 +68,7 @@ end
 #   end
 # end
 
+# Release 2 work
 nick = Santa.new("male", "Caucasian", 60)
 nick.celebrate_birthday
 nick.get_mad_at("Vixen")
