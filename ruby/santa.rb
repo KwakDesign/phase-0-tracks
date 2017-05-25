@@ -27,6 +27,14 @@ class Santa
     @reindeer_ranking
   end
 
+  def gender
+    @gender
+  end
+
+  def gender=(update_gender)
+    @gender = update_gender
+  end
+
 end
 
 # santas = []
@@ -54,3 +62,6 @@ nick = Santa.new("male", "Caucasian", 60)
 nick.celebrate_birthday
 nick.get_mad_at("Vixen")
 puts "Here is the current reindeer ranking: #{nick.reindeer_ranking}"
+puts "Santa's gender is #{nick.gender}."
+nick.gender = "female"
+puts "Santa's gender is now #{nick.gender}."
