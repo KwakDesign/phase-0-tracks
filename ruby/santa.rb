@@ -1,4 +1,8 @@
 class Santa
+  # getter and setter shortcuts
+  attr_reader :age, :reindeer_ranking
+  attr_accessor :gender, :ethnicity
+
   def initialize(gender, ethnicity, age)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -21,28 +25,6 @@ class Santa
 
   def get_mad_at(reindeer_name)
     @reindeer_ranking.insert(8, @reindeer_ranking.delete(reindeer_name))
-  end
-
-  # getter methods
-  def reindeer_ranking
-    @reindeer_ranking
-  end
-
-  def gender
-    @gender
-  end
-
-  def age
-    @age
-  end
-
-  # setter methods
-  def gender=(update_gender)
-    @gender = update_gender
-  end
-
-  def ethnicity
-    @ethnicity
   end
 end
 
