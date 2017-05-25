@@ -28,9 +28,40 @@ class Puppy
 
 end
 
-odie = Puppy.new
-odie.fetch("ball")
-odie.speak(5)
-odie.roll_over
-puts odie.dog_years(3)
-odie.sniff("flower")
+# odie = Puppy.new
+# odie.fetch("ball")
+# odie.speak(5)
+# odie.roll_over
+# puts odie.dog_years(3)
+# odie.sniff("flower")
+
+
+class Stormtrooper
+
+  def initialize
+    puts "Stroomtrooper reporting for duty and ready to fight rebel scum!"
+  end
+
+  def fire_blaster(how_many)
+    puts "Pew! " * how_many
+  end
+
+  def scream
+    puts "TRAITOR!!!"
+  end
+
+end
+
+trooper = Stormtrooper.new
+trooper.fire_blaster(3)
+trooper.scream
+
+
+
+
+
+
+
+
+
+
