@@ -35,6 +35,13 @@ class Santa
     @gender = update_gender
   end
 
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
 end
 
 # santas = []
