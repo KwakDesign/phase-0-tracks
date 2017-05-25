@@ -19,6 +19,14 @@ class Santa
     puts "Happy Birthday Santa, you're #{@age + 1} now!"
   end
 
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.insert(8, @reindeer_ranking.delete(reindeer_name))
+  end
+
+  def reindeer_ranking
+    @reindeer_ranking
+  end
+
 end
 
 # santas = []
@@ -44,3 +52,5 @@ end
 
 nick = Santa.new("male", "Caucasian", 60)
 nick.celebrate_birthday
+nick.get_mad_at("Vixen")
+puts "Here is the current reindeer ranking: #{nick.reindeer_ranking}"
