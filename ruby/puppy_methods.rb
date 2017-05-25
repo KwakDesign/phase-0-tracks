@@ -38,8 +38,8 @@ end
 
 class Stormtrooper
 
-  def initialize
-    puts "Stroomtrooper reporting for duty and ready to fight rebel scum!"
+  def initialize(idx)
+    puts "Stroomtrooper #{idx} reporting for duty and ready to fight rebel scum!"
   end
 
   def fire_blaster(how_many)
@@ -52,10 +52,20 @@ class Stormtrooper
 
 end
 
-trooper = Stormtrooper.new
-trooper.fire_blaster(3)
-trooper.scream
+# trooper = Stormtrooper.new
+# trooper.fire_blaster(3)
+# trooper.scream
 
+trooper_group = []
+
+index = 1
+while trooper_group.length < 50
+  trooper = Stormtrooper.new(index)
+  trooper_group << trooper
+  index += 1
+end
+
+puts trooper_group.length
 
 
 
