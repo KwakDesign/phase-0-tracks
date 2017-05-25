@@ -37,14 +37,22 @@ end
 # nick.gender = "female"
 # puts "Santa's gender is now #{nick.gender}."
 
-# santa_group = []
-# santa_genders = ["agender", "bigender", "female", "gender fluid", "male", "pangender", "N/A"]
-# santa_ethnicities = ["African-American", "Asian/Pacific-Islander", "Caucasian", "Latino", "South Asian", "Mystical Creature (unicorn)", "N/A"]
+santa_group = []
+santa_genders = ["agender", "bigender", "female", "gender fluid", "male", "pangender", "N/A"]
+santa_ethnicities = ["African-American", "Asian/Pacific-Islander", "Caucasian", "Latino", "South Asian", "Mystical Creature (unicorn)", "N/A"]
+random_age = Random.new
+
+while santa_group.length != 50
+  a_santa = Santa.new(santa_genders.sample, santa_ethnicities.sample, random_age.rand(141))
+  santa_group << a_santa
+end
+puts santa_group[0]
 
 # santa_genders.length.times do |i|
-#   santa_group << Santa.new(santa_genders[i], santa_ethnicities[i])
-#   santa_group.each_with_index do |santa, idx|
-#     puts santa.speak
-#     break
-#   end
+#   santa_group << Santa.new(santa_genders.sample, santa_ethnicities.sample, random_age.rand(141))
+#   # santa_group.each_with_index do |santa, idx|
+#   #   puts santa.speak
+#   #   break
+#   # end
+#   puts santa_group
 # end
