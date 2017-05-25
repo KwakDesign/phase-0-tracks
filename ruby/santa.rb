@@ -1,4 +1,5 @@
 class Santa
+  # Release 3
   # getter and setter shortcuts
   attr_reader :age, :reindeer_ranking
   attr_accessor :gender, :ethnicity
