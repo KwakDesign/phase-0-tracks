@@ -2,7 +2,7 @@
 
 # BUSINESS LOGIC
 # create class called GuessAWord.
-class GuessAWord
+class Hangman
   # created attr_accessor to get and set various instance variables in the class.
   attr_accessor :mask_word, :chances_left, :game_is_over
 
@@ -25,4 +25,11 @@ class GuessAWord
     # call masked_word to mask the word to guess when the GuessAWord class is initialized.
     masked_word
   end
+
+  # define a method called mask_word to mask the @word_to_guess value in # symbols.
+  def masked_word
+    # take the length of the word_to_guess instance variable and multiply it with a hash symbol to mask each letter of the word to guess and store it in a new variable called masked_word.
+    @mask_word = '#' * @word_to_guess.length
+  end
+
 end
