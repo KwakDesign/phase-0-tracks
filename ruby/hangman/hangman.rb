@@ -32,4 +32,46 @@ class Hangman
     @mask_word = '#' * @word_to_guess.length
   end
 
+  # define a method called start_guessing which takes a letter as an argument.
+  def start_guessing(letter)
+    # downcase! the letter argument so that it stays consistent throughout the program.
+    letter.downcase!
+    # grab the index position of the letter in word_to_guess and assign it to variable called index so that we can utilize it to position the included letter correctly.
+    index = @word_to_guess.index(letter)
+
+    # IF the letter is included in the word to guess AND NOT included in the masked word...
+    if @word_to_guess.include?(letter) && !@mask_word.include?(letter)
+      # Then IF the word to guess has more than 1 instance of the letter...
+      if @word_to_guess.count(letter) >= 1
+        # Split the word to guess by each letter, then go through each letter along with each index position, IF the letter matches the letter in the word to guess, assign the letter to every index position of where it occurs in the masked word.
+        this_word = @word_to_guess.split('')
+        this_word.each_with_index do |each_letter, idx|
+          if each_letter == letter
+            @mask_word[idx] = letter
+          end
+        end
+      else
+        # ELSE assign the letter to it's correct index position in the masked word.
+        @mask_word[index] = letter
+      end
+    # ELSIF the letter is included in the word to guess AND included in the masked word notify the user they entered the letter already and to try again.
+    elsif @word_to_guess.include?(letter) && @mask_word.include?(letter)
+      puts "You already entered this letter. Try Again!"
+    # ELSIF the letter is NOT included then notify the user, deduct the number of chances by 1.
+    elsif !@word_to_guess.include?(letter)
+      puts "WRONG Try again! You have #{@chances_left - 1} left."
+      @chances_left = @chances_left - 1
+      # IF the player runs out of chances the game ends.
+      if @chances_left == 0
+        puts "WOMP! WOMP! YOU LOST!"
+        @game_is_over = true
+      end
+    end
+    # IF the word to guess is completed end the game.
+    if @mask_word == @word_to_guess
+      puts "YOU SOLVED THE WORD!"
+      @game_is_over = true
+    end
+  end
 end
+
