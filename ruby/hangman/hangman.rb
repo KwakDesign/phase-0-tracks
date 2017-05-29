@@ -72,15 +72,15 @@ class Hangman
   end
 end
 
-# # DRIVER CODE
-# # Start the game by having a user enter a word for another user to guess.
-# puts "Enter a word that you want the other player to guess."
-# the_word = gets.chomp
-# game = Hangman.new(the_word)
+# DRIVER CODE
+# Start the game by having a user enter a word for another user to guess.
+puts "Enter a word that you want the other player to guess."
+the_word = gets.chomp
+game = Hangman.new(the_word)
 
-# while !game.game_is_over
-#   puts "Enter a letter to guess the word: #{game.mask_word}"
-#   puts "You have #{game.chances_left} chances left!"
-#   my_guess = gets.chomp
-#   game.start_guessing(my_guess)
-# end
+while !game.game_is_over
+  puts "Enter a letter to guess the word: #{game.mask_word}"
+  puts "You have #{game.chances_left} chances left!"
+  my_guess = gets.chomp
+  game.start_guessing(my_guess)
+end
