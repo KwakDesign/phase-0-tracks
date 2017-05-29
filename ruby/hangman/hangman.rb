@@ -4,7 +4,7 @@
 # create class called GuessAWord.
 class Hangman
   # created attr_accessor to get and set various instance variables in the class.
-  attr_accessor :mask_word, :chances_left, :game_is_over
+  attr_accessor :word_to_guess, :mask_word, :chances_left, :game_is_over
 
   # define a initializer instance method that takes an argument which is the word to guess.
   def initialize(word)
@@ -50,9 +50,6 @@ class Hangman
             @mask_word[idx] = letter
           end
         end
-      else
-        # ELSE assign the letter to it's correct index position in the masked word.
-        @mask_word[index] = letter
       end
     # ELSIF the letter is included in the word to guess AND included in the masked word notify the user they entered the letter already and to try again.
     elsif @word_to_guess.include?(letter) && @mask_word.include?(letter)
@@ -75,15 +72,15 @@ class Hangman
   end
 end
 
-# DRIVER CODE
-# Start the game by having a user enter a word for another user to guess.
-puts "Enter a word that you want the other player to guess."
-the_word = gets.chomp
-game = Hangman.new(the_word)
+# # DRIVER CODE
+# # Start the game by having a user enter a word for another user to guess.
+# puts "Enter a word that you want the other player to guess."
+# the_word = gets.chomp
+# game = Hangman.new(the_word)
 
-while !game.game_is_over
-  puts "Enter a letter to guess the word: #{game.mask_word}"
-  puts "You have #{game.chances_left} chances left!"
-  my_guess = gets.chomp
-  game.start_guessing(my_guess)
-end
+# while !game.game_is_over
+#   puts "Enter a letter to guess the word: #{game.mask_word}"
+#   puts "You have #{game.chances_left} chances left!"
+#   my_guess = gets.chomp
+#   game.start_guessing(my_guess)
+# end
