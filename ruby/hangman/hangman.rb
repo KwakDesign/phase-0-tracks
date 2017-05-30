@@ -41,14 +41,11 @@ class Hangman
 
     # IF the letter is included in the word to guess AND NOT included in the masked word...
     if @word_to_guess.include?(letter) && !@mask_word.include?(letter)
-      # Then IF the word to guess has more than 1 instance of the letter...
-      if @word_to_guess.count(letter) >= 1
-        # Split the word to guess by each letter, then go through each letter along with each index position, IF the letter matches the letter in the word to guess, assign the letter to every index position of where it occurs in the masked word.
-        this_word = @word_to_guess.split('')
-        this_word.each_with_index do |each_letter, idx|
-          if each_letter == letter
-            @mask_word[idx] = letter
-          end
+      # Split the word to guess by each letter, then go through each letter along with each index position, IF the letter matches the letter in the word to guess, assign the letter to every index position of where it occurs in the masked word.
+      this_word = @word_to_guess.split('')
+      this_word.each_with_index do |each_letter, idx|
+        if each_letter == letter
+          @mask_word[idx] = letter
         end
       end
     # ELSIF the letter is included in the word to guess AND included in the masked word notify the user they entered the letter already and to try again.
@@ -67,6 +64,7 @@ class Hangman
     # IF the word to guess is completed end the game.
     if @mask_word == @word_to_guess
       puts "YOU SOLVED THE WORD!"
+      puts @mask_word
       @game_is_over = true
     end
   end
