@@ -36,8 +36,6 @@ class Hangman
   def start_guessing(letter)
     # downcase! the letter argument so that it stays consistent throughout the program.
     letter.downcase!
-    # grab the index position of the letter in word_to_guess and assign it to variable called index so that we can utilize it to position the included letter correctly.
-    index = @word_to_guess.index(letter)
 
     # IF the letter is included in the word to guess AND NOT included in the masked word...
     if @word_to_guess.include?(letter) && !@mask_word.include?(letter)
