@@ -11,3 +11,11 @@ function reverseString(str) {
   }
   return new_str
 }
+
+var reversed = reverseString("hello");
+
+if (reversed) {
+  console.log(reversed);
+} else {
+  console.log("The code failed...")
+}
