@@ -12,3 +12,18 @@ for (var i = 0; i < names.length; i++){
 }
 
 console.log(horse);
+
+// Created Car prototype with properties model, color and wheels
+function Car(model, color, wheels){
+  this.model = model;
+  this.color = color;
+  this.wheels = wheels;
+  this.honk = function(){
+    console.log("honk!");
+  };
+}
+
+var ford = new Car("Taurus", "red", 4);
+var toyota = new Car("Camry", "white", 4);
+console.log(ford);
+console.log(toyota);
