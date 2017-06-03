@@ -17,17 +17,18 @@ class VirusPredictor
     @population_density = population_density
   end
 
-  # combination of calling the two main instance methods of this class VirusPredictor.
-  def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
-  end
-
   # the private keyword makes the following lines of code exclusive to this class
   private
 
+  # combination of calling the two main instance methods of this class VirusPredictor.
+  def virus_effects
+    predicted_deaths
+    speed_of_spread
+  end
+
+
   # categorizes the states based off of the population density and calculates the number of deaths based on which category condition it is.
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -46,7 +47,7 @@ class VirusPredictor
   end
 
   # categorizes the states based off of the population density and calculates the speed of the spread of the disease based on which category condition it is.
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
