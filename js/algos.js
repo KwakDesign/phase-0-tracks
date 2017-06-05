@@ -15,6 +15,7 @@ function longestWord(arr) {
       long = arr[i];
     }
   }
+  // return the longest word...
   return long;
 }
 
@@ -38,17 +39,56 @@ function keyValueMatch(obj1, obj2) {
   for(var i = 0; i < whichBool.length; i++) {
     // IF both values equal 'false' return false.
     if((whichBool[0] === 'false') && (whichBool[1] === 'false')) {
-      console.log('really false');
       return false;
       //otherwise return true.
     } else {
-      console.log('really true');
       return true;
     }
   }
 }
 
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
+
+//create a function called howManyWords which takes an integer as an argument and returns an array with the same number of words as the argument.
+function howManyWords(how_many) {
+  // create empty variable called word which will store the word that's created.
+  var word = '';
+  // create empty array called these_words which will store how many number of words created.
+  var these_words = [];
+  // create variable called random_size which will randomly generate a length for the word that will be created randomly.
+  var random_length = Math.ceil(Math.random() * (11 - 1));
+  // create variable called letters which holds the alphabet.
+  var letters = 'abcdefghijklmnopqrstuvwxyz';
+  // create counter variable for while loop.
+  var idx = 0;
+
+  // create while loop that will run a number of times based on how many times the function was asked to...
+  while(idx < how_many) {
+    // run a for loop which will create a random length word...
+    for(var i = 0; i < random_length; i++) {
+      word += letters[Math.floor(Math.random() * letters.length)];
+    }
+    // push the randomly generated word into the array...
+    these_words.push(word);
+    // increment the counter variable by 1.
+    idx += 1;
+  }
+  // return the array...
+  return these_words;
+}
+
+
 // longestWord function
 console.log(longestWord(this_arr));
+
 // keyValueMatch function
-keyValueMatch(obj1, obj2);
+console.log(keyValueMatch(obj1, obj2));
+
+// howManyWords function
+console.log(howManyWords(3));
+
+
+// combining longestWord and howManyWords functions...
+var longest = howManyWords(10);
+console.log(longest);
+console.log(longestWord(longest));
