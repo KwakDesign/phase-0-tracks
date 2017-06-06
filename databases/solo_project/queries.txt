@@ -10,7 +10,7 @@ output:
 
 2. Update an item that meets some condition (you can choose a condition that makes sense).
 input:
-INSERT INTO nba_players (name, number, team_id) VALUES ("Kyrie Irving", 2, 2);
+INSERT INTO nba_players (player_name, player_num, team_id) VALUES ("Kyrie Irving", 2, 2);
 
 output:
 1|Steph Curry|30|1
@@ -32,7 +32,7 @@ output:
 
 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 input:
-SELECT nba_players.name, nba_teams.name FROM nba_players JOIN nba_teams ON nba_players.team_id = nba_teams.id;
+SELECT nba_players.player_name, nba_teams.team_name FROM nba_players JOIN nba_teams ON nba_players.team_id = nba_teams.id;
 
 output:
 Steph Curry|Golden State Warriors
@@ -43,10 +43,37 @@ Kyrie Irving|Cleveland Cavaliers
 
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 input:
-DELETE FROM nba_players WHERE name="Kyrie Irving";
+DELETE FROM nba_players WHERE player_name="Kyrie Irving";
 
 output:
 1|Steph Curry|30|1
 2|Kevin Durant|35|1
 3|Lebron James|23|2
 4|Kevin Love|0|2
+
+CROSS JOIN:
+input:
+SELECT player_name, player_num, team_name, won_champ FROM nba_teams CROSS JOIN nba_players;
+
+output:
+Steph Curry|30|Golden State Warriors|true
+Kevin Durant|35|Golden State Warriors|true
+Lebron James|23|Golden State Warriors|true
+Kevin Love|0|Golden State Warriors|true
+Steph Curry|30|Cleveland Cavaliers|true
+Kevin Durant|35|Cleveland Cavaliers|true
+Lebron James|23|Cleveland Cavaliers|true
+Kevin Love|0|Cleveland Cavaliers|true
+
+INNER JOIN:
+input:
+SELECT player_name, player_num, team_name, won_champ FROM nba_players INNER JOIN nba_teams ON nba_players.team_id = nba_teams.id;
+
+output:
+Steph Curry|30|Golden State Warriors|true
+Kevin Durant|35|Golden State Warriors|true
+Lebron James|23|Cleveland Cavaliers|true
+Kevin Love|0|Cleveland Cavaliers|true
+
+OUTER JOIN:
+*With the way the current database is built the input and output will be the same as the INNER JOIN, as a matter of fact OUTER JOIN is an extension of INNER JOIN. The OUTER JOIN's condition is identical to INNER JOIN's condition.
