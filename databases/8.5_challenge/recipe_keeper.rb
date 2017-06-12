@@ -1,3 +1,28 @@
+# Recipe Keeper v.2 - SUPER SIMPLIFIED...
+# An application that lets you store, delete, edit, and view recipes.
+# The application has a table RECIPES and comes with 2 pieces of data prepopulated in the table to view, edit and delete.
+
+# require gems, install them if they aren't already.
+require 'sqlite3' # lets you create a SQLite3 db
+
+# create an instance of a SQLite3 database.
+recipe_db = SQLite3::Database.new("recipe_keep.db")
+recipe_db.results_as_hash = true
+
+# using heredoc create a table called INGREDIENTS which will store ingredients and RECIPES which will store recipes.
+create_recipes = <<-SQL
+  CREATE TABLE IF NOT EXISTS RECIPES (
+    id INTEGER PRIMARY KEY,
+    recipes VARCHAR(255)
+  );
+SQL
+
+# execute and create the tables IF they do not exist yet.
+recipe_db.execute(create_recipes)
+
+
+
+
 # # Recipe Keeper v.1
 # # An application that lets you store, edit, view recipes and ingredients.
 # # The application has 2 predefined tables called INGREDIENTS and RECIPES, where INGREDIENTS will have some default ingredients already populated.
