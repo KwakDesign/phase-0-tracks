@@ -1,3 +1,4 @@
+# BUSINESS LOGIC
 # Recipe Keeper v.2 - SUPER SIMPLIFIED...
 # An application that lets you store, delete, edit, and view recipes.
 # The application has a table RECIPES and comes with 2 pieces of data prepopulated in the table to view, edit and delete.
@@ -44,7 +45,72 @@ def view_recipe(db)
   end
 end
 
+# USER INTERFACE
+what_task = nil
+add_info = nil
+delete_info = nil
+update_info = {}
 
+puts "Welcome to the Recipe Keeper!\n"
+# A loop will continue to ask the user for their input, WHILE the loops condition has not yet been met.
+while what_task != 'done'
+  puts "\nTo add a recipe, type 'add'.\nTo delete a recipe, type 'delete'.\nTo update a recipe, type 'update'.\nTo view a recipe, type 'view'.\nTo exit the application, type 'done'."
+  # store the users input
+  what_task = gets.chomp.downcase
+  # break out of the loop if the condition is met.
+  break if what_task == 'done'
+  # use a case conditional statement to determine which option the user has entered.
+  case what_task
+  when 'add'
+    # if the 'add' option has been entered by the user, a loop will continue to ask the user for their input, WHILE the loops condition has not yet been met.
+    while add_info != 'done'
+      puts "Enter a recipe and it's ingredients.(to exit type 'done')"
+      add_info = gets.chomp
+      break if add_info == 'done'
+      add_recipe(recipe_db, add_info)
+    end
+  when 'delete'
+    # if the 'delete' option has been entered by the user, a loop will continue to ask the user for their input, WHILE the loops condition has not yet been met.
+    while delete_info != 'done'
+      view_recipe(recipe_db)
+      puts "Enter the number of which recipe to delete.(to exit type 'done')"
+      delete_info = gets.chomp
+      break if delete_info == 'done'
+      # for validation purposes we check to see if the user has entered in a number.
+      if !delete_info.is_a?(Integer)
+        puts "Please enter the number of the recipe you wish to delete."
+        delete_info = gets.chomp
+        delete_recipe(recipe_db, delete_info)
+      else
+        delete_recipe(recipe_db, delete_info)
+      end
+    end
+  when 'update'
+    # if the 'update' option has been entered by the user, a loop will continue to ask the user for their input, WHILE the loops condition has not yet been met.
+    while update_info != 'done'
+      view_recipe(recipe_db)
+      puts "Enter the number of which recipe to update.(to exit type 'done')"
+      this_id = gets.chomp
+      break if this_id == 'done'
+      # for validation purposes we check to see if the user has entered in a number.
+      if !this_id.is_a?(Integer)
+        puts "Please enter the number of the recipe you wish to update."
+        this_id = gets.chomp.to_i
+        update_info[:recipe_id] = this_id
+      else
+        update_info[:recipe_id] = this_id
+      end
+      puts "Please update the recipe and then press 'ENTER'."
+      this_update = gets.chomp
+      update_info[:recipe_info] = this_update
+      update_recipe(recipe_db, update_info)
+      view_recipe(recipe_db)
+    end
+  when 'view'
+    # if the 'view' option has been entered it will display the existing data in the RECIPES table.
+    view_recipe(recipe_db)
+  end
+end
 
 
 # # Recipe Keeper v.1
