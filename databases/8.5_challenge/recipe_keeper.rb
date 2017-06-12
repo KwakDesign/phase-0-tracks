@@ -20,6 +20,30 @@ SQL
 # execute and create the tables IF they do not exist yet.
 recipe_db.execute(create_recipes)
 
+# create method that will add a recipe's to the RECIPES table and show the results.
+def add_recipe(db, add_info)
+  db.execute("INSERT INTO RECIPES (recipes) VALUES ('#{add_info}')")
+  view_recipe(db)
+end
+
+# create method that will delete a recipe's in the RECIPES table.
+def delete_recipe(db, delete_info)
+  db.execute("DELETE FROM RECIPES WHERE id='#{delete_info}'")
+end
+
+#create method that will update a recipe and show the results.
+def update_recipe(db, update_info)
+  db.execute("UPDATE RECIPES SET recipes='#{update_info[:recipe_info]}' WHERE id='#{update_info[:recipe_id]}'")
+end
+
+# create method that will show data in the RECIPES table.
+def view_recipe(db)
+  all_recipes = db.execute("SELECT id, recipes FROM RECIPES")
+  all_recipes.each do |recipe|
+    puts "(#{recipe['id']}) - #{recipe['recipes']}\n\n"
+  end
+end
+
 
 
 
