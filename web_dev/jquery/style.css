@@ -1,0 +1,14 @@
+.outer {
+  margin: 0 auto;
+  width: 960px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.img-container {
+  margin: 0 auto;
+  width: 300px;
+}
+
