@@ -24,4 +24,11 @@ post '/students' do
   redirect '/'
 end
 
+# create a route that will display student names that are located in NYC.
+get '/campus/:campus' do
+  @students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  erb :student_nyc
+end
+
+
 # add static resources

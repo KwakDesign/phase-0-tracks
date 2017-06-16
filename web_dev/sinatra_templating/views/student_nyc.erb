@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>Students From NYC</title>
+</head>
+<body>
+  <h1>Students From NYC</h1>
+  <ul>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['age'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
