@@ -76,7 +76,7 @@ get '/students/campus/:campus' do
   response
 end
 
-# multi parameter version, here we can retrieve students from two parameters. i.e. /students/age/62 or /students/campus/NYC
+# multi parameter version, here we can retrieve students from two parameters. i.e. `
 # get '/students/:param/:match' do
 #   student = db.execute("SELECT * FROM students WHERE #{params[:param]}=?", [params[:match]])
 #   student.to_s
