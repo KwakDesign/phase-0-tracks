@@ -19,11 +19,11 @@ get '/students/new' do
   erb :new_student
 end
 
-# show campuses on the home page
-get '/' do
-  @campuses = campus_db.execute("SELECT * FROM campuses")
-  erb :home
-end
+# trying to show show campuses on the home page
+# get '/' do
+#   @campuses = campus_db.execute("SELECT * FROM campuses")
+#   erb :home
+# end
 
 get '/campuses/new' do
   erb :campuses
