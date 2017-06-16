@@ -9,9 +9,10 @@ campus_db = SQLite3::Database.new("campuses.db")
 db.results_as_hash = true
 campus_db.results_as_hash = true
 
-# show students on the home page
+# show students and campuses on the home page
 get '/' do
   @students = db.execute("SELECT * FROM students")
+  @campuses = campus_db.execute("SELECT * FROM campuses")
   erb :home
 end
 
@@ -19,14 +20,8 @@ get '/students/new' do
   erb :new_student
 end
 
-# trying to show show campuses on the home page
-# get '/' do
-#   @campuses = campus_db.execute("SELECT * FROM campuses")
-#   erb :home
-# end
-
 get '/campuses/new' do
-  erb :campuses
+  erb :new_campus
 end
 
 # create new students via
@@ -41,7 +36,6 @@ get '/campus/:campus' do
   @students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
   erb :student_nyc
 end
-
 
 # create new campuses via a form
 post '/campuses' do

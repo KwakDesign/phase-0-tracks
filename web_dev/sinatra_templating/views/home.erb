@@ -8,18 +8,22 @@
     <h1>Student Management System</h1>
     <p>Welcome to the student management system.</p>
     <p>Click <a href="students/new">here</a> to create a new student.</p>
-    <p>Click <a href="campuses/new">here</a> to create a campus location.</p>
     <ul>
       <% @students.each do |student| %>
         <li><%= student['name'] %>, <%= student['age'] %></li>
       <% end %>
     </ul>
   </div>
-  <!-- work in progress -- trying to make campuses print out like the students above. -->
-  <!-- <div class="container campus">
+
+  <div class="container campus">
     <h1>Campus Management System</h1>
     <p>Welcome to the campus management system.</p>
-    <p><%= @campuses %></p>
-  </div> -->
+    <p>Click <a href="campuses/new">here</a> to create a campus location.</p>
+    <ul>
+      <% @campuses.each do |campus| %>
+        <li><%= campus['campus_name'] %></li>
+      <% end %>
+    </ul>
+  </div>
 </body>
 </html>
